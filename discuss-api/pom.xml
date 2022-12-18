@@ -5,12 +5,11 @@
 
     <parent>
         <groupId>com.tophat</groupId>
-        <artifactId>discuss</artifactId>
+        <artifactId>discuss-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.tophat</groupId>
     <artifactId>discuss-api</artifactId>
     <packaging>jar</packaging>
     <name>Discussion API</name>
@@ -23,14 +22,5 @@
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

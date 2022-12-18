@@ -21,7 +21,7 @@ import java.io.Serializable;
 public class DiscussionRequest implements Serializable {
 
     @Required(message = "User id is required")
-    private Long userId;
+    private Long authorId;
 
     @NotBlank(message = "Question is required")
     private String question;

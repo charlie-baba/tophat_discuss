@@ -27,7 +27,7 @@ public class Discussion extends BaseEntity {
 
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, targetEntity = Comment.class, cascade = CascadeType.ALL)
-    @JoinColumn(name="question_fk")
+    @JoinColumn(name="discussion_fk")
     private Set<Comment> comments = new HashSet<>();
 
 }

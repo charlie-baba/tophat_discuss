@@ -11,11 +11,11 @@
     </parent>
 
     <groupId>com.tophat</groupId>
-    <artifactId>discuss</artifactId>
+    <artifactId>discuss-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>tophat_discuss</name>
-    <description>tophat_discuss</description>
+    <name>Tophat discuss API Library</name>
+    <description>Tophat discuss API Library</description>
 
     <modules>
         <module>discuss-api</module>
@@ -73,7 +73,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${springboot.version}</version>
                 <configuration>
-                    <mainClass>com.tophat.discuss.api.DiscussApiApplication</mainClass>
+                    <mainClass>com.tophat.discuss.DiscussApiApplication</mainClass>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -87,7 +87,7 @@
                             <goal>repackage</goal>
                         </goals>
                         <configuration>
-                            <mainClass>com.tophat.discuss.api.DiscussApiApplication</mainClass>
+                            <mainClass>com.tophat.discuss.DiscussApiApplication</mainClass>
                         </configuration>
                     </execution>
                 </executions>

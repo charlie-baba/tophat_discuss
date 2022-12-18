@@ -1,5 +1,6 @@
 package com.tophat.discuss.service.services.impl;
 
+import com.tophat.discuss.data.enums.UserType;
 import com.tophat.discuss.data.models.User;
 import com.tophat.discuss.data.repository.UserRepository;
 import com.tophat.discuss.service.pojo.request.UserRequest;
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getAllUsers() {
-        return userRepository.getAllUsers();
+        return userRepository.findAll();
     }
 
     @Override
@@ -37,16 +38,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public User createUser(UserRequest userRequest) {
-        if (userRepository.findByUsername(userRequest.getUsername()) != null) {
-            throw new EntityNotFoundException("A user with the email " + userRequest.getUsername() + " already exists");
+    public User createUser(UserRequest request) {
+        if (userRepository.findByUsername(request.getUsername()) != null) {
+            throw new EntityNotFoundException("A user with the email " + request.getUsername() + " already exists");
         }
-        if (userRepository.findByPhoneNumber(userRequest.getPhoneNumber()) != null) {
-            throw new EntityNotFoundException("A user with the phone number " + userRequest.getPhoneNumber() + " already exists");
+        if (userRepository.findByPhoneNumber(request.getPhoneNumber()) != null) {
+            throw new EntityNotFoundException("A user with the phone number " + request.getPhoneNumber() + " already exists");
         }
 
         User user = new User();
-        BeanUtils.copyProperties(userRequest, user);
+        BeanUtils.copyProperties(request, user);
+        user.setUserType(UserType.valueOf(request.getUserType()));
         userRepository.save(user);
         return user;
     }

@@ -33,6 +33,6 @@ public class UserRequest implements Serializable {
     private String phoneNumber;
 
     @Required(message = "User type is required")
-    private UserType userType;
+    private String userType;
 
 }

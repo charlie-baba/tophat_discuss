@@ -23,7 +23,7 @@ public class DiscussionController {
         return discussionService.getAllDiscussions();
     }
 
-    @GetMapping("/{id}}")
+    @GetMapping("/{id}")
     public Discussion getDiscussions(@PathVariable("id") Long id) {
         return discussionService.getDiscussion(id);
     }

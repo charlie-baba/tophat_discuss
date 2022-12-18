@@ -26,7 +26,7 @@ public class CommentRequest implements Serializable {
     private Long parentCommentId;
 
     @Required(message = "User id is required")
-    private Long userId;
+    private Long authorId;
 
     @NotBlank(message = "Comment is required")
     private String comment;

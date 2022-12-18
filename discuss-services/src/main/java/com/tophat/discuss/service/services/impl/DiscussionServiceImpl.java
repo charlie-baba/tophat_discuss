@@ -26,7 +26,7 @@ public class DiscussionServiceImpl implements DiscussionService {
     private DiscussionRepository discussionRepository;
 
     public List<Discussion> getAllDiscussions() {
-        return discussionRepository.getAllDiscussions();
+        return discussionRepository.findAll();
     }
 
     @Override
@@ -41,9 +41,9 @@ public class DiscussionServiceImpl implements DiscussionService {
     @Override
     @Transactional
     public Discussion createDiscussion(DiscussionRequest request) {
-        User user = userRepository.findUserById(request.getUserId());
+        User user = userRepository.findUserById(request.getAuthorId());
         if (user == null) {
-            throw new EntityNotFoundException("User with id: "+ request.getUserId() +" does not exist.");
+            throw new EntityNotFoundException("User with id: "+ request.getAuthorId() +" does not exist.");
         }
         Discussion discussion = new Discussion();
         discussion.setAuthor(user);

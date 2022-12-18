@@ -14,12 +14,11 @@ import java.util.List;
 @Repository
 public interface DiscussionRepository extends JpaRepository<Discussion, Long> {
 
-    @Query("select d from Discussion d")
-    List<Discussion> getAllDiscussions();
+    List<Discussion> findAll();
 
     Discussion findDiscussionById(Long id);
 
-    @Query("select d from Discussion d left join fetch d.comments where d.id = :id")
+    @Query("select d from Discussion d left join fetch d.comments c where d.id = :id")
     Discussion loadDiscussionById(@Param("id") Long id);
 
 }

@@ -14,16 +14,16 @@ import lombok.Setter;
 @Table(name = "comments")
 public class Comment extends BaseEntity {
 
-    @Column(name = "comment")
+    @Column(name = "comment", nullable = false)
     private String comment;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
-    @JoinColumn(name = "user_fk")
+    @JoinColumn(name = "user_fk", nullable = false)
     private User author;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Discussion.class)
-    @JoinColumn(name = "discussion_fk")
+    @JoinColumn(name = "discussion_fk", nullable = false)
     private Discussion discussion;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Comment.class)

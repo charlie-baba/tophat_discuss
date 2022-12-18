@@ -33,11 +33,11 @@ public class CommentServiceImpl implements CommentService {
     public Comment addComment(CommentRequest request) {
         Discussion discussion = discussionRepository.findDiscussionById(request.getDiscussionId());
         if (discussion == null) {
-            throw new EntityNotFoundException("Discussion with id: "+ request.getUserId() +" does not exist.");
+            throw new EntityNotFoundException("Discussion with id: "+ request.getAuthorId() +" does not exist.");
         }
-        User author = userRepository.findUserById(request.getUserId());
+        User author = userRepository.findUserById(request.getAuthorId());
         if (author == null) {
-            throw new EntityNotFoundException("User with id: "+ request.getUserId() +" does not exist.");
+            throw new EntityNotFoundException("User with id: "+ request.getAuthorId() +" does not exist.");
         }
         Comment parentComment = null;
         if (request.getParentCommentId() != null) {
