@@ -7,9 +7,11 @@ import com.tophat.discuss.data.repository.CommentRepository;
 import com.tophat.discuss.data.repository.DiscussionRepository;
 import com.tophat.discuss.data.repository.UserRepository;
 import com.tophat.discuss.service.pojo.request.CommentRequest;
+import com.tophat.discuss.service.pojo.response.CommentResponse;
 import com.tophat.discuss.service.services.CommentService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +32,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     @Transactional
-    public Comment addComment(CommentRequest request) {
+    public CommentResponse addComment(CommentRequest request) {
         Discussion discussion = discussionRepository.findDiscussionById(request.getDiscussionId());
         if (discussion == null) {
             throw new EntityNotFoundException("Discussion with id: "+ request.getAuthorId() +" does not exist.");
@@ -50,7 +52,7 @@ public class CommentServiceImpl implements CommentService {
         comment.setComment(request.getComment());
         comment.setParentComment(parentComment);
         commentRepository.save(comment);
-        return comment;
+        return new CommentResponse(comment);
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.tophat.discuss.api.controllers;
 
 import com.tophat.discuss.data.models.Comment;
 import com.tophat.discuss.service.pojo.request.CommentRequest;
+import com.tophat.discuss.service.pojo.response.CommentResponse;
 import com.tophat.discuss.service.services.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class CommentsController {
     private CommentService commentService;
 
     @PostMapping
-    public Comment addComment(@RequestBody CommentRequest request) {
+    public CommentResponse addComment(@RequestBody CommentRequest request) {
         return commentService.addComment(request);
     }
 
