@@ -32,7 +32,7 @@ public class DiscussionResponse implements Serializable {
 
     private Date dateCreated;
 
-    private Long commentsCount;
+    private Long commentsCount = 0L;
 
     private Set<CommentResponse> comments = new HashSet<>();
 
