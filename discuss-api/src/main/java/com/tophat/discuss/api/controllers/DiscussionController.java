@@ -24,7 +24,7 @@ public class DiscussionController {
     }
 
     @GetMapping("/{id}")
-    public DiscussionResponse getDiscussions(@PathVariable("id") Long id) {
+    public DiscussionResponse getDiscussion(@PathVariable("id") Long id) {
         return discussionService.getDiscussion(id);
     }
 
