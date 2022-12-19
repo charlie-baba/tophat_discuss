@@ -2,23 +2,26 @@
 
 # Discussion-API
 
-This Booking-API article will walk you through building an application that allows you to create a booking, email booking to verify account, verifies the account and can deactivate the booking without deleting the record.
+The Discussion-API is an API for a professor/student to start a discussion and anyone can respond to 
+a question with their comments. Students can also respond to each other’s comments.  
+This article will walk you through the steps to set up and run the Discussion-API.
 
 ## Prerequisites
 
-* Basic Java knowledge, including an installed version of the JVM and Maven.
-* Basic Git knowledge, including an installed version of Git.
+* Installed version of the JDK 17 (or higher) and Maven.
+* Installed version of Git.
 * Postgres server installed on your device.
 
-### How To run Booking-API
+### How To run Discussion-API
 
 Follow each step to build and deploy the app
 Running the app from and IDE like intellij or Eclipse
 
-    - clone the repo from https://github.com/charlie-baba/booking-api.git
+    - clone the repo from https://github.com/charlie-baba/tophat_discuss.git
     - add the project to intellij or any java IDE
     - make sure to resolve all meaven dependencies (already included in the project).
-    - run the GlofoxApiApplication class
+    - create a database in your postgres server name 'tophat_discuss'.
+    - run the DiscussApiApplication class
 
     INFO: Initializing ProtocolHandler ["http://localhost:8080"] 
     - The default port is 8080, it can be modified from the application.properties file (key = "server.port") 
