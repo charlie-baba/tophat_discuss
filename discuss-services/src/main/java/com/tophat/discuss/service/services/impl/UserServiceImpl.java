@@ -40,9 +40,9 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public User createUser(UserRequest request) {
         if (userRepository.findByUsername(request.getUsername()) != null) {
-            throw new EntityNotFoundException("A user with the email " + request.getUsername() + " already exists");
+            throw new EntityNotFoundException("A user with the username " + request.getUsername() + " already exists");
         }
-        if (userRepository.findByPhoneNumber(request.getPhoneNumber()) != null) {
+        if (request.getPhoneNumber() != null && userRepository.findByPhoneNumber(request.getPhoneNumber()) != null) {
             throw new EntityNotFoundException("A user with the phone number " + request.getPhoneNumber() + " already exists");
         }
 
