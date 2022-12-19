@@ -1,7 +1,7 @@
 package com.tophat.discuss.api.controllers;
 
 import com.tophat.discuss.data.models.User;
-import com.tophat.discuss.service.pojo.request.UserRequest;
+import com.tophat.discuss.data.pojo.request.UserRequest;
 import com.tophat.discuss.service.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

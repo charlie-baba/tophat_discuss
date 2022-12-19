@@ -1,7 +1,7 @@
 package com.tophat.discuss.service.services;
 
-import com.tophat.discuss.service.pojo.request.CommentRequest;
-import com.tophat.discuss.service.pojo.response.CommentResponse;
+import com.tophat.discuss.data.pojo.request.CommentRequest;
+import com.tophat.discuss.data.pojo.response.CommentResponse;
 
 /**
  * @author Charles on 17/12/2022

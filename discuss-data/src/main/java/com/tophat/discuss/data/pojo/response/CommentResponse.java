@@ -1,4 +1,4 @@
-package com.tophat.discuss.service.pojo.response;
+package com.tophat.discuss.data.pojo.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tophat.discuss.data.models.Comment;
@@ -43,4 +43,5 @@ public class CommentResponse implements Serializable {
         if (comment.getParentComment() != null)
             this.parentCommentId = comment.getParentComment().getId();
     }
+
 }

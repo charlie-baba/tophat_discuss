@@ -1,4 +1,4 @@
-package com.tophat.discuss.service.pojo.request;
+package com.tophat.discuss.data.pojo.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
@@ -18,12 +18,17 @@ import java.io.Serializable;
 @ToString
 @Component
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DiscussionRequest implements Serializable {
+public class CommentRequest implements Serializable {
+
+    @Required(message = "Discussion id is required")
+    private Long discussionId;
+
+    private Long parentCommentId;
 
     @Required(message = "User id is required")
     private Long authorId;
 
-    @NotBlank(message = "Question is required")
-    private String question;
+    @NotBlank(message = "Comment is required")
+    private String comment;
 
 }

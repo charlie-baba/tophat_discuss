@@ -1,7 +1,7 @@
 package com.tophat.discuss.api.controllers;
 
-import com.tophat.discuss.data.models.Discussion;
-import com.tophat.discuss.service.pojo.request.DiscussionRequest;
+import com.tophat.discuss.data.pojo.request.DiscussionRequest;
+import com.tophat.discuss.data.pojo.response.DiscussionResponse;
 import com.tophat.discuss.service.services.DiscussionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,22 +19,22 @@ public class DiscussionController {
     private DiscussionService discussionService;
 
     @GetMapping("/getAll")
-    public List<Discussion> getDiscussions() {
+    public List<DiscussionResponse> getDiscussions() {
         return discussionService.getAllDiscussions();
     }
 
     @GetMapping("/{id}")
-    public Discussion getDiscussions(@PathVariable("id") Long id) {
+    public DiscussionResponse getDiscussions(@PathVariable("id") Long id) {
         return discussionService.getDiscussion(id);
     }
 
     @PostMapping
-    public Discussion createDiscussion(@RequestBody DiscussionRequest request) {
+    public DiscussionResponse createDiscussion(@RequestBody DiscussionRequest request) {
         return discussionService.createDiscussion(request);
     }
 
     @PutMapping("/{id}")
-    public Discussion updateDiscussion(@PathVariable("id") Long id,
+    public DiscussionResponse updateDiscussion(@PathVariable("id") Long id,
                            @RequestBody DiscussionRequest request) {
         return discussionService.updateDiscussion(id, request);
     }

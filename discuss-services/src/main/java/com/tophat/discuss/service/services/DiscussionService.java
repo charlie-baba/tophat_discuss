@@ -1,7 +1,7 @@
 package com.tophat.discuss.service.services;
 
-import com.tophat.discuss.data.models.Discussion;
-import com.tophat.discuss.service.pojo.request.DiscussionRequest;
+import com.tophat.discuss.data.pojo.request.DiscussionRequest;
+import com.tophat.discuss.data.pojo.response.DiscussionResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,13 +12,13 @@ import java.util.List;
 @Service
 public interface DiscussionService {
 
-    List<Discussion> getAllDiscussions();
+    List<DiscussionResponse> getAllDiscussions();
 
-    Discussion getDiscussion(Long id);
+    DiscussionResponse getDiscussion(Long id);
 
-    Discussion createDiscussion(DiscussionRequest request);
+    DiscussionResponse createDiscussion(DiscussionRequest request);
 
-    Discussion updateDiscussion(Long id, DiscussionRequest request);
+    DiscussionResponse updateDiscussion(Long id, DiscussionRequest request);
 
     void deleteDiscussion(Long id);
 }

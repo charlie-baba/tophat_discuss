@@ -1,7 +1,7 @@
 package com.tophat.discuss.service.services;
 
 import com.tophat.discuss.data.models.User;
-import com.tophat.discuss.service.pojo.request.UserRequest;
+import com.tophat.discuss.data.pojo.request.UserRequest;
 
 import java.util.List;
 

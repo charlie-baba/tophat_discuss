@@ -3,7 +3,7 @@ package com.tophat.discuss.service.services.impl;
 import com.tophat.discuss.data.enums.UserType;
 import com.tophat.discuss.data.models.User;
 import com.tophat.discuss.data.repository.UserRepository;
-import com.tophat.discuss.service.pojo.request.UserRequest;
+import com.tophat.discuss.data.pojo.request.UserRequest;
 import com.tophat.discuss.service.services.UserService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
